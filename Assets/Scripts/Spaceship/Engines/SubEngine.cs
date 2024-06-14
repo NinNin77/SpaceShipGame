@@ -42,10 +42,10 @@ public class SubEngine : MonoBehaviour
 
         // エンジンの出力
         float myFloat = CoreEngines._subEngine_Particle * power;
-        BtmRight.enginePower = myFloat / 4;
-        BtmLeft.enginePower = myFloat / 4;
-        SideRight.enginePower = myFloat / 4;
-        SideLeft.enginePower = myFloat / 4;
+        BtmRight._enginePower = myFloat / 4;
+        BtmLeft._enginePower = myFloat / 4;
+        SideRight._enginePower = myFloat / 4;
+        SideLeft._enginePower = myFloat / 4;
 
         //エンジンの向き
         BtmRight.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
@@ -59,10 +59,10 @@ public class SubEngine : MonoBehaviour
 
         // エンジンの出力
         float myFloat = CoreEngines._subEngine_Particle * power;
-        TopRight.enginePower = myFloat / 4;
-        TopLeft.enginePower = myFloat / 4;
-        SideRight.enginePower = myFloat / 4;
-        SideLeft.enginePower = myFloat / 4;
+        TopRight._enginePower = myFloat / 4;
+        TopLeft._enginePower = myFloat / 4;
+        SideRight._enginePower = myFloat / 4;
+        SideLeft._enginePower = myFloat / 4;
 
         //エンジンの向き
         TopRight.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
@@ -76,10 +76,10 @@ public class SubEngine : MonoBehaviour
 
         //エンジンの出力
         float myFloat = CoreEngines._subEngine_Particle * power;
-        TopLeft.enginePower = myFloat / 4;
-        BtmRight.enginePower = myFloat / 4;
-        SideRight.enginePower = myFloat / 4;
-        SideLeft.enginePower = myFloat / 4;
+        TopLeft._enginePower = myFloat / 4;
+        BtmRight._enginePower = myFloat / 4;
+        SideRight._enginePower = myFloat / 4;
+        SideLeft._enginePower = myFloat / 4;
 
         //エンジンの向き
         //TopRight.transform.localRotation = Quaternion.Euler(0f, 0f, 135f);
@@ -95,10 +95,10 @@ public class SubEngine : MonoBehaviour
 
         //エンジンの出力
         float myFloat = CoreEngines._subEngine_Particle * power;
-        TopRight.enginePower = myFloat / 4;
-        BtmLeft.enginePower = myFloat / 4;
-        SideRight.enginePower = myFloat / 4;
-        SideLeft.enginePower = myFloat / 4;
+        TopRight._enginePower = myFloat / 4;
+        BtmLeft._enginePower = myFloat / 4;
+        SideRight._enginePower = myFloat / 4;
+        SideLeft._enginePower = myFloat / 4;
 
         //エンジンの向き
         TopRight.transform.localRotation = Quaternion.Euler(0f, 0f, 325f);//270 + 45 + 10
@@ -111,12 +111,12 @@ public class SubEngine : MonoBehaviour
     public void Effect_ResetEngine()
     {
         // エンジン出力をリセット
-        TopRight.enginePower = 0;
-        TopLeft.enginePower = 0;
-        BtmRight.enginePower = 0;
-        BtmLeft.enginePower = 0;
-        SideRight.enginePower = 0;
-        SideLeft.enginePower = 0;
+        TopRight._enginePower = 0;
+        TopLeft._enginePower = 0;
+        BtmRight._enginePower = 0;
+        BtmLeft._enginePower = 0;
+        SideRight._enginePower = 0;
+        SideLeft._enginePower = 0;
 
         //エンジンの向きをリセット
         TopRight.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);

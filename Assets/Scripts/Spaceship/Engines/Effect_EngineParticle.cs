@@ -8,23 +8,26 @@ using UnityEngine;
 /// </summary>
 public class Effect_EngineParticle : MonoBehaviour
 {
-    [SerializeField] public float enginePower;
-    [SerializeField] private GameObject particle;
-    ParticleSystem ps;
+    [SerializeField] public float _enginePower;
+    [SerializeField] private float _particleEmission = 1f;
+    [SerializeField] private float _particleSpeed = 0.7f;
+
+    [SerializeField] private GameObject _particle;
+    ParticleSystem _ps;
 
     private void Start()
     {
-        GameObject obj = Instantiate(particle, this.transform.position, this.transform.rotation);
+        GameObject obj = Instantiate(_particle, this.transform.position, this.transform.rotation);
         obj.transform.parent = transform;
-        ps = obj.GetComponent<ParticleSystem>();
+        _ps = obj.GetComponent<ParticleSystem>();
     }
     void Update()
     {
         // •¬ŽË—Ê
-        var emission = ps.emission;
-        emission.rateOverTime = enginePower;
+        var psEmission = _ps.emission;
+        psEmission.rateOverTime = _enginePower * _particleEmission;
         // •¬ŽË‘¬“x
-        var main = ps.main;
-        main.startSpeed = enginePower / 2;
+        var psMain = _ps.main;
+        psMain.startSpeed = _enginePower * _particleSpeed;
     }
 }

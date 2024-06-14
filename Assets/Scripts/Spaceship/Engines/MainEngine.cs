@@ -36,17 +36,17 @@ public class MainEngine : MonoBehaviour
 
         // エンジンの出力
         float myFloat = CoreEngines._mainEngine_Particle * power;
-        main1.enginePower = myFloat / 4;
-        main2.enginePower = myFloat / 4;
-        main3.enginePower = myFloat / 4;
-        main4.enginePower = myFloat / 4;
+        main1._enginePower = myFloat / 4;
+        main2._enginePower = myFloat / 4;
+        main3._enginePower = myFloat / 4;
+        main4._enginePower = myFloat / 4;
     }
     public void Effect_ResetEngine()
     {
         // エンジン出力をリセット
-        main1.enginePower = 0;
-        main2.enginePower = 0;
-        main3.enginePower = 0;
-        main4.enginePower = 0;
+        main1._enginePower = 0;
+        main2._enginePower = 0;
+        main3._enginePower = 0;
+        main4._enginePower = 0;
     }
 }
