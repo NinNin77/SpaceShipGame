@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b359c7b5dad345bae5644551c0872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 0
-  particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
+  _enginePower: 0
+  _particleEmission: 1
+  _particleSpeed: 0.5
+  _particle: {fileID: 0}
 --- !u!1 &1578931633836640599
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,8 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b359c7b5dad345bae5644551c0872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 0
-  particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
+  _enginePower: 0
+  _particleEmission: 1
+  _particleSpeed: 0.5
+  _particle: {fileID: 0}
 --- !u!1 &1633147907667305848
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,8 +190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b359c7b5dad345bae5644551c0872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 100
-  particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
+  _enginePower: 0
+  _particleEmission: 1
+  _particleSpeed: 0.5
+  _particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
 --- !u!1 &2914511808064274943
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,8 +238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b359c7b5dad345bae5644551c0872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 100
-  particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
+  _enginePower: 0
+  _particleEmission: 1
+  _particleSpeed: 0.5
+  _particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
 --- !u!1 &2955085056576033762
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,8 +286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b359c7b5dad345bae5644551c0872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 100
-  particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
+  _enginePower: 0
+  _particleEmission: 1
+  _particleSpeed: 0.5
+  _particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
 --- !u!1 &3808858811852497454
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,8 +334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b359c7b5dad345bae5644551c0872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 0
-  particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
+  _enginePower: 0
+  _particleEmission: 1
+  _particleSpeed: 0.5
+  _particle: {fileID: 0}
 --- !u!1 &4890161200860281913
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,8 +382,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b359c7b5dad345bae5644551c0872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 100
-  particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
+  _enginePower: 0
+  _particleEmission: 1
+  _particleSpeed: 0.5
+  _particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
 --- !u!1 &6131094838386151842
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,8 +482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b359c7b5dad345bae5644551c0872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 100
-  particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
+  _enginePower: 0
+  _particleEmission: 1
+  _particleSpeed: 0.5
+  _particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
 --- !u!1 &7364033331724443851
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,8 +563,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b359c7b5dad345bae5644551c0872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 100
-  particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
+  _enginePower: 0
+  _particleEmission: 1
+  _particleSpeed: 0.5
+  _particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
 --- !u!1 &8599927743817286540
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,5 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b359c7b5dad345bae5644551c0872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 0
-  particle: {fileID: 5669185273637634385, guid: c158ef6f299fac24096506de9e860918, type: 3}
+  _enginePower: 0
+  _particleEmission: 1
+  _particleSpeed: 0.5
+  _particle: {fileID: 0}
