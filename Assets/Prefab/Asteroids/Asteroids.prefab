@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6090311427656175854}
   - component: {fileID: 4065546048370256433}
   - component: {fileID: 4786568576583500737}
+  - component: {fileID: 6160782542328851453}
   m_Layer: 0
   m_Name: Asteroid (2)
   m_TagString: Untagged
@@ -161,6 +162,33 @@ MonoBehaviour:
   _health: 40
   _autoMaxHealth: 1
   _maxHealth: 60
+--- !u!50 &6160782542328851453
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258597631744536591}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &605621550508916350
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +201,7 @@ GameObject:
   - component: {fileID: 7367028468749379499}
   - component: {fileID: 77394540942936817}
   - component: {fileID: 5279050760741994574}
+  - component: {fileID: 6901218064850496950}
   m_Layer: 0
   m_Name: Asteroid (5)
   m_TagString: Untagged
@@ -316,6 +345,33 @@ MonoBehaviour:
   _health: 10
   _autoMaxHealth: 1
   _maxHealth: 60
+--- !u!50 &6901218064850496950
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605621550508916350}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &949484186005939683
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +384,7 @@ GameObject:
   - component: {fileID: 1376402840775379882}
   - component: {fileID: 4853274686158238761}
   - component: {fileID: 6712221937519072863}
+  - component: {fileID: 2529687115032859055}
   m_Layer: 0
   m_Name: Asteroid (0)
   m_TagString: Untagged
@@ -488,6 +545,33 @@ MonoBehaviour:
   _health: 60
   _autoMaxHealth: 1
   _maxHealth: 60
+--- !u!50 &2529687115032859055
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949484186005939683}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1853652840297520715
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +584,7 @@ GameObject:
   - component: {fileID: 834456115612824533}
   - component: {fileID: 2856934370429062305}
   - component: {fileID: 8617564282000664498}
+  - component: {fileID: 317200094761305916}
   m_Layer: 0
   m_Name: Asteroid (4)
   m_TagString: Untagged
@@ -646,6 +731,33 @@ MonoBehaviour:
   _health: 20
   _autoMaxHealth: 1
   _maxHealth: 60
+--- !u!50 &317200094761305916
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853652840297520715}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2197530723359881046
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +770,7 @@ GameObject:
   - component: {fileID: 134920866734929786}
   - component: {fileID: 140176595571577956}
   - component: {fileID: 240009618988447309}
+  - component: {fileID: 1171075932683047160}
   m_Layer: 0
   m_Name: Asteroid (1)
   m_TagString: Untagged
@@ -806,6 +919,33 @@ MonoBehaviour:
   _health: 50
   _autoMaxHealth: 1
   _maxHealth: 60
+--- !u!50 &1171075932683047160
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197530723359881046}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2756831817940552764
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,6 +995,7 @@ GameObject:
   - component: {fileID: 540709313920610276}
   - component: {fileID: 3833399534235450152}
   - component: {fileID: 8116317300747794154}
+  - component: {fileID: 3339808072356836956}
   m_Layer: 0
   m_Name: Asteroid (3)
   m_TagString: Untagged
@@ -1002,3 +1143,30 @@ MonoBehaviour:
   _health: 30
   _autoMaxHealth: 1
   _maxHealth: 60
+--- !u!50 &3339808072356836956
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179731951232600444}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

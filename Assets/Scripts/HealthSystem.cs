@@ -57,14 +57,14 @@ public class HealthSystem : MonoBehaviour
         if (_health > _maxHealth)
         {
             _health = _maxHealth;
-            Debug.Log("関数[ModifyHealth]を介さず、[health > maxHealth]になった。" +
+            Debug.LogWarning("関数[ModifyHealth]を介さず、[_health > _maxHealth]になった。" +
                 "healthにmaxHealthを代入した。", this.gameObject);
         }
-        //Modify後のヘルスが、0未満になる場合
-        if (_health < 0)
+        //Modify後のヘルスが、0以下になる場合
+        if (_health <= 0)
         {
             Destroy(this.gameObject);//自身を破壊
-            Debug.Log("関数[ModifyHealth]を介さず、[health < 0]になった。" +
+            Debug.LogWarning("関数[ModifyHealth]を介さず、[_health <= 0]になった。" +
                 "オブジェクトは破壊した。", this.gameObject);
         }
     }
