@@ -15,7 +15,7 @@ public class SubEngine : MonoBehaviour
     [SerializeField] public float maxPower = 1.0f; //使ってない
 
     // アサイン　
-    CtrlEngines CoreEngines;
+    EnginesCtrl CoreEngines;
     //各エンジンを登録
     Effect_EngineParticle TopRight;
     Effect_EngineParticle TopLeft;
@@ -27,7 +27,7 @@ public class SubEngine : MonoBehaviour
     private void Start()
     {
         // 初期化
-        CoreEngines = GetComponentInParent<CtrlEngines>();
+        CoreEngines = GetComponentInParent<EnginesCtrl>();
         TopRight = GameObject.Find("1_TopRight").GetComponent<Effect_EngineParticle>();
         TopLeft = GameObject.Find("2_TopLeft").GetComponent<Effect_EngineParticle>();
         BtmRight = GameObject.Find("3_BtmRight").GetComponent<Effect_EngineParticle>();

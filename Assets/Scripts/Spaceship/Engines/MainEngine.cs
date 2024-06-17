@@ -9,7 +9,7 @@ public class MainEngine : MonoBehaviour
     [SerializeField] public float maxPower = 1.0f;
 
     // アサイン
-    CtrlEngines CoreEngines;
+    EnginesCtrl CoreEngines;
     //各エンジン
     Effect_EngineParticle main1;
     Effect_EngineParticle main2;
@@ -19,7 +19,7 @@ public class MainEngine : MonoBehaviour
     private void Start()
     {
         // 初期化
-        CoreEngines = GetComponentInParent<CtrlEngines>();
+        CoreEngines = GetComponentInParent<EnginesCtrl>();
         main1 = GameObject.Find("1_main").GetComponent<Effect_EngineParticle>();
         main2 = GameObject.Find("2_main").GetComponent<Effect_EngineParticle>();
         main3 = GameObject.Find("3_main").GetComponent<Effect_EngineParticle>();

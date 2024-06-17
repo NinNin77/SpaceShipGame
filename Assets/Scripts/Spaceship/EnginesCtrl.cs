@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CtrlEngines : MonoBehaviour
+public class EnginesCtrl : MonoBehaviour
 {
     //パラメータ //本当は、変数自体は階下のEngineに置いておいて、ここから参照/値変更出来るようにするのが良い。
     [SerializeField] public float _mainEngine_Move = 1000.0f;
-    [SerializeField] public float _mainEngine_Particle = 200.0f;
+    [SerializeField] public float _mainEngine_Particle = 100.0f;
 
     [SerializeField] public float _subEngine_Move = 500.0f;
-    [SerializeField] public float _subEngine_Particle = 100.0f;
+    [SerializeField] public float _subEngine_Particle = 50.0f;
 
     // アサイン
     Rigidbody2D _thisRiBdy;
-    CtrlInput _coreKey;
+    InputCtrl _coreKey;
     MainEngine _mainEngine;
     SubEngine _subEngine;
 
@@ -24,7 +24,7 @@ public class CtrlEngines : MonoBehaviour
     {
         // アサイン
         _thisRiBdy = GetComponent<Rigidbody2D>();
-        _coreKey = GetComponent<CtrlInput>();
+        _coreKey = GetComponent<InputCtrl>();
         _mainEngine = GetComponentInChildren<MainEngine>();
         _subEngine = GetComponentInChildren<SubEngine>();
     }
@@ -41,27 +41,27 @@ public class CtrlEngines : MonoBehaviour
         _subEngine.power = 1.0f;
         _tmpPower = _subEngine.power * _subEngine_Move;
 
-        if (_coreKey.inputDirection == CtrlInput.InputDirection.Front)
+        if (_coreKey.inputDirection == InputCtrl.InputDirection.Front)
         {
             _thisRiBdy.AddForce(transform.up * _tmpPower * Time.deltaTime, ForceMode2D.Force);//動け！
             _subEngine.Effect_Forward();
         }
-        if (_coreKey.inputDirection == CtrlInput.InputDirection.Back)
+        if (_coreKey.inputDirection == InputCtrl.InputDirection.Back)
         {
             _thisRiBdy.AddForce(-transform.up * _tmpPower * Time.deltaTime, ForceMode2D.Force);//動け！
             _subEngine.Effect_Backward();
         }
-        if (_coreKey.inputDirection == CtrlInput.InputDirection.Right)
+        if (_coreKey.inputDirection == InputCtrl.InputDirection.Right)
         {
             _thisRiBdy.AddTorque(-_tmpPower * Time.deltaTime, ForceMode2D.Force);//動け！
             _subEngine.Effect_TurnRight();
         }
-        if (_coreKey.inputDirection == CtrlInput.InputDirection.Left)
+        if (_coreKey.inputDirection == InputCtrl.InputDirection.Left)
         {
             _thisRiBdy.AddTorque(_tmpPower * Time.deltaTime, ForceMode2D.Force);//動け！
             _subEngine.Effect_TrunLeft();
         }
-        if (_coreKey.inputDirection == CtrlInput.InputDirection.None)
+        if (_coreKey.inputDirection == InputCtrl.InputDirection.None)
         {
             _subEngine.Effect_ResetEngine();
         }
@@ -85,13 +85,13 @@ public class CtrlEngines : MonoBehaviour
 
         //動け！
         _tmpPower = _mainEngine.power * _mainEngine_Move;
-        if (_coreKey.inputDirection == CtrlInput.InputDirection.Front && _coreKey.inputMainEngineIsOn == true)
+        if (_coreKey.inputDirection == InputCtrl.InputDirection.Front && _coreKey.inputMainEngineIsOn == true)
         {
             _thisRiBdy.AddForce(transform.up * _tmpPower * Time.deltaTime, ForceMode2D.Force);
         }
 
         //Effect
-        if (_coreKey.inputDirection == CtrlInput.InputDirection.Front && _coreKey.inputMainEngineIsOn == true)
+        if (_coreKey.inputDirection == InputCtrl.InputDirection.Front && _coreKey.inputMainEngineIsOn == true)
         {
             _mainEngine.Effect_Forward();
         }

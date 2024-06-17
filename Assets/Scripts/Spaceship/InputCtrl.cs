@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Search;
 using UnityEngine;
 
-public class CtrlInput : MonoBehaviour
+public class InputCtrl : MonoBehaviour
 {
     // •Ô‚è’l
     public InputDirection inputDirection = InputDirection.None;
