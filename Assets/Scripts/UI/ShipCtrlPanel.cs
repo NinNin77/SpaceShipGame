@@ -4,6 +4,8 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Reflection;
+using static UnityEngine.UI.Image;
 
 public class ShipCtrlPanel : MonoBehaviour
 {
@@ -14,9 +16,9 @@ public class ShipCtrlPanel : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text _timerText;
     [SerializeField] private Slider _timerSlider;
 
-    [SerializeField] private TMPro.TMP_Text _powerEngineText;
-    [SerializeField] private TMPro.TMP_Text _powerShieldText;
-    [SerializeField] private TMPro.TMP_Text _powerLaserText;
+    [SerializeField] private Slider _powerEngineSlider;
+    [SerializeField] private Slider _powerShieldSlider;
+    [SerializeField] private Slider _powerLaserSlider;
 
     [SerializeField] private TMPro.TMP_Text _inputDirectText;
     [SerializeField] private TMPro.TMP_Text _inputForBackText;
@@ -27,6 +29,7 @@ public class ShipCtrlPanel : MonoBehaviour
     private GameObject _spaceship;
     private HealthSystem _ssHealthSystem;
     private HyperspaceCtrl _ssHyperspaceCtrl;
+    private InputCtrl _ssInputCtrl;
     // その他
     private MainEngine _mainEngine;
     private SubEngine _subEngine;
@@ -36,6 +39,7 @@ public class ShipCtrlPanel : MonoBehaviour
         _spaceship = GameObject.Find("Spaceship");
         _ssHealthSystem = _spaceship.GetComponent<HealthSystem>();
         _ssHyperspaceCtrl = _spaceship.GetComponent<HyperspaceCtrl>();
+        _ssInputCtrl = _spaceship.GetComponent<InputCtrl>();
 
         _obj = GameObject.Find("mainEngine");
         _mainEngine = _obj.GetComponent<MainEngine>();
@@ -47,6 +51,7 @@ public class ShipCtrlPanel : MonoBehaviour
     {
         Health();
         Timer();
+        Input();
     }
     void Health()
     {
@@ -63,12 +68,47 @@ public class ShipCtrlPanel : MonoBehaviour
 
         // Text
         string timer = dbl.ToString("F1"); //F1 = 小数第1位まで表示するようフォーマット
-        _timerText.SetText($"Time: {timer}s");
+        _timerText.SetText($"{timer}s");
         // Slider
         _timerSlider.value = (float)_ssHyperspaceCtrl._currentTimer / (float)_ssHyperspaceCtrl._maxTimer;
     }
     void Power()
     {
 
+    }
+    void Input()
+    {
+        var list = new List<string>();
+        var dict = new Dictionary<string, string>();
+
+        //他のInputも取得
+        if (_ssInputCtrl != null)
+        {
+            //Type？Scriptの？なにそれおいしいの？
+            System.Type scriptType = _ssInputCtrl.GetType();
+            //BindingFlags.Public | BindingFlags.Instanceを使用して、Publicなインスタンスフィールドのみを取得。
+            FieldInfo[] fields = scriptType.GetFields(BindingFlags.Public | BindingFlags.Instance);
+
+            foreach (FieldInfo field in fields)
+            {
+                //フィールド名が"_input"で始まる場合
+                if (field.Name.StartsWith("_input"))
+                {
+                    //値をげっちゅする
+                    object fieldValue = field.GetValue(_ssInputCtrl);
+                    //値を出力する
+                    dict.Add(field.Name, fieldValue.ToString());
+                }
+            }
+        }
+
+        string text = "";
+        foreach (var item in dict)
+        {
+            string key = item.Key.Replace("_input", string.Empty); //"_input"部分を消す。
+
+            text += "> " + key + ": " + item + "\n"; //組み合わせる。
+        }
+        _inputOtherText.SetText($"{text}");
     }
 }

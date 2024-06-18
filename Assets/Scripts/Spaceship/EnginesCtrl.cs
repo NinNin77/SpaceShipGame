@@ -41,27 +41,27 @@ public class EnginesCtrl : MonoBehaviour
         _subEngine.power = 1.0f;
         _tmpPower = _subEngine.power * _subEngine_Move;
 
-        if (_coreKey.inputDirection == InputCtrl.InputDirection.Front)
+        if (_coreKey._inputDirection == InputCtrl.InputDirection.Front)
         {
             _thisRiBdy.AddForce(transform.up * _tmpPower * Time.deltaTime, ForceMode2D.Force);//動け！
             _subEngine.Effect_Forward();
         }
-        if (_coreKey.inputDirection == InputCtrl.InputDirection.Back)
+        if (_coreKey._inputDirection == InputCtrl.InputDirection.Back)
         {
             _thisRiBdy.AddForce(-transform.up * _tmpPower * Time.deltaTime, ForceMode2D.Force);//動け！
             _subEngine.Effect_Backward();
         }
-        if (_coreKey.inputDirection == InputCtrl.InputDirection.Right)
+        if (_coreKey._inputDirection == InputCtrl.InputDirection.Right)
         {
             _thisRiBdy.AddTorque(-_tmpPower * Time.deltaTime, ForceMode2D.Force);//動け！
             _subEngine.Effect_TurnRight();
         }
-        if (_coreKey.inputDirection == InputCtrl.InputDirection.Left)
+        if (_coreKey._inputDirection == InputCtrl.InputDirection.Left)
         {
             _thisRiBdy.AddTorque(_tmpPower * Time.deltaTime, ForceMode2D.Force);//動け！
             _subEngine.Effect_TrunLeft();
         }
-        if (_coreKey.inputDirection == InputCtrl.InputDirection.None)
+        if (_coreKey._inputDirection == InputCtrl.InputDirection.None)
         {
             _subEngine.Effect_ResetEngine();
         }
@@ -70,8 +70,8 @@ public class EnginesCtrl : MonoBehaviour
     {
         // _mainEngine
         //キー入力を、出力に、足す
-        _mainEngine.power += _coreKey.inputMainEngineAddPower;
-        _coreKey.inputMainEngineAddPower = 0; //リセット
+        _mainEngine.power += _coreKey._inputMainEngineAddPower;
+        _coreKey._inputMainEngineAddPower = 0; //リセット
 
         //エンジン出力に上限と下限を設ける
         if (_mainEngine.power > _mainEngine.maxPower)
@@ -85,13 +85,13 @@ public class EnginesCtrl : MonoBehaviour
 
         //動け！
         _tmpPower = _mainEngine.power * _mainEngine_Move;
-        if (_coreKey.inputDirection == InputCtrl.InputDirection.Front && _coreKey.inputMainEngineIsOn == true)
+        if (_coreKey._inputDirection == InputCtrl.InputDirection.Front && _coreKey._inputMainEngineIsOn == true)
         {
             _thisRiBdy.AddForce(transform.up * _tmpPower * Time.deltaTime, ForceMode2D.Force);
         }
 
         //Effect
-        if (_coreKey.inputDirection == InputCtrl.InputDirection.Front && _coreKey.inputMainEngineIsOn == true)
+        if (_coreKey._inputDirection == InputCtrl.InputDirection.Front && _coreKey._inputMainEngineIsOn == true)
         {
             _mainEngine.Effect_Forward();
         }

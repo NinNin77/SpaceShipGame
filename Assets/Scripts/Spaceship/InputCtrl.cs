@@ -6,9 +6,9 @@ using UnityEngine;
 public class InputCtrl : MonoBehaviour
 {
     // 返り値
-    public InputDirection inputDirection = InputDirection.None;
-    public float inputMainEngineAddPower = 0f;
-    public bool inputMainEngineIsOn = false;
+    public InputDirection _inputDirection = InputDirection.None;
+    public float _inputMainEngineAddPower = 0f;
+    public bool _inputMainEngineIsOn = false;
 
     /// <summary>
     /// デバイスからの入力を取得.上下左右の方向
@@ -37,7 +37,7 @@ public class InputCtrl : MonoBehaviour
 
     void Update()
     {
-        inputDirection = WASD_NoOverlap();
+        _inputDirection = WASD_NoOverlap();
         ShiftandScroll();
     }
 
@@ -114,16 +114,16 @@ public class InputCtrl : MonoBehaviour
         //返り値
         if (wh != 0)
         {
-            inputMainEngineAddPower += wh;　//マウスホイール
+            _inputMainEngineAddPower += wh;　//マウスホイール
         }
 
         if (shiftPressTime > 0)
         {
-            inputMainEngineIsOn = true; //シフトが押されている時
+            _inputMainEngineIsOn = true; //シフトが押されている時
         }
         else
         {
-            inputMainEngineIsOn = false; //シフトが押されていない時
+            _inputMainEngineIsOn = false; //シフトが押されていない時
         }
         
     }
