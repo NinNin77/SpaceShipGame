@@ -591,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
@@ -901,7 +901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911269469421751289, guid: caf7d5a413b454746a1395d770767426, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00095421117
+      value: -0.00097377435
       objectReference: {fileID: 0}
     - target: {fileID: 8850094267076823895, guid: caf7d5a413b454746a1395d770767426, type: 3}
       propertyPath: m_AnchorMax.x

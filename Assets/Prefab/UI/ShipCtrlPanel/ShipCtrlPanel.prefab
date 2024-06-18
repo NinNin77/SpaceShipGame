@@ -515,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5675617802751039387, guid: 87fc68f9083346d4f9993100438b6fe6, type: 3}
       propertyPath: m_Size
-      value: 1
+      value: 0.9999999
       objectReference: {fileID: 0}
     - target: {fileID: 5699308306915414119, guid: 87fc68f9083346d4f9993100438b6fe6, type: 3}
       propertyPath: m_Sprite
@@ -527,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354196944704384459, guid: 87fc68f9083346d4f9993100438b6fe6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00096920144
+      value: -0.00094858964
       objectReference: {fileID: 0}
     - target: {fileID: 7910065303188901482, guid: 87fc68f9083346d4f9993100438b6fe6, type: 3}
       propertyPath: m_Pivot.x

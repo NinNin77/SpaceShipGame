@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 30
+  _health: 40
   _autoMaxHealth: 1
   _maxHealth: 10
 --- !u!1 &605621550508916350
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 10
   _autoMaxHealth: 1
   _maxHealth: 10
 --- !u!1 &949484186005939683
@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
+  _health: 60
   _autoMaxHealth: 1
   _maxHealth: 10
 --- !u!1 &1853652840297520715
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 50
+  _health: 20
   _autoMaxHealth: 1
   _maxHealth: 10
 --- !u!1 &2197530723359881046
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 20
+  _health: 50
   _autoMaxHealth: 1
   _maxHealth: 10
 --- !u!1 &2756831817940552764
@@ -1167,6 +1167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 40
+  _health: 30
   _autoMaxHealth: 1
   _maxHealth: 10
