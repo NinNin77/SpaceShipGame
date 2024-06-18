@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3272605609067586376}
   - component: {fileID: 6090311427656175854}
   - component: {fileID: 4065546048370256433}
-  - component: {fileID: 4786568576583500737}
   - component: {fileID: 6160782542328851453}
+  - component: {fileID: 3012298163839405763}
   m_Layer: 0
   m_Name: Asteroid (2)
   m_TagString: Untagged
@@ -147,21 +147,6 @@ PolygonCollider2D:
       - {x: 0.105, y: -0.04}
       - {x: 0.13499999, y: -0.01}
   m_UseDelaunayMesh: 0
---- !u!114 &4786568576583500737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258597631744536591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42ad763b61eb1947855857a30086eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 40
-  _autoMaxHealth: 1
-  _maxHealth: 60
 --- !u!50 &6160782542328851453
 Rigidbody2D:
   serializedVersion: 4
@@ -189,6 +174,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3012298163839405763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258597631744536591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 30
+  _autoMaxHealth: 1
+  _maxHealth: 10
 --- !u!1 &605621550508916350
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,8 +200,8 @@ GameObject:
   - component: {fileID: 2328926093289157054}
   - component: {fileID: 7367028468749379499}
   - component: {fileID: 77394540942936817}
-  - component: {fileID: 5279050760741994574}
   - component: {fileID: 6901218064850496950}
+  - component: {fileID: 8843991801677743897}
   m_Layer: 0
   m_Name: Asteroid (5)
   m_TagString: Untagged
@@ -330,21 +330,6 @@ PolygonCollider2D:
       - {x: 0.065, y: -0.01}
       - {x: 0.065, y: 0.03}
   m_UseDelaunayMesh: 0
---- !u!114 &5279050760741994574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605621550508916350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42ad763b61eb1947855857a30086eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 10
-  _autoMaxHealth: 1
-  _maxHealth: 60
 --- !u!50 &6901218064850496950
 Rigidbody2D:
   serializedVersion: 4
@@ -372,6 +357,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8843991801677743897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605621550508916350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 60
+  _autoMaxHealth: 1
+  _maxHealth: 10
 --- !u!1 &949484186005939683
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,8 +383,8 @@ GameObject:
   - component: {fileID: 8276819746425846971}
   - component: {fileID: 1376402840775379882}
   - component: {fileID: 4853274686158238761}
-  - component: {fileID: 6712221937519072863}
   - component: {fileID: 2529687115032859055}
+  - component: {fileID: 3183309016287167104}
   m_Layer: 0
   m_Name: Asteroid (0)
   m_TagString: Untagged
@@ -530,21 +530,6 @@ PolygonCollider2D:
       - {x: 0.04, y: -0.08}
       - {x: 0.07, y: -0.08}
   m_UseDelaunayMesh: 0
---- !u!114 &6712221937519072863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949484186005939683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42ad763b61eb1947855857a30086eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 60
-  _autoMaxHealth: 1
-  _maxHealth: 60
 --- !u!50 &2529687115032859055
 Rigidbody2D:
   serializedVersion: 4
@@ -572,6 +557,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3183309016287167104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949484186005939683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 10
+  _autoMaxHealth: 1
+  _maxHealth: 10
 --- !u!1 &1853652840297520715
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,8 +583,8 @@ GameObject:
   - component: {fileID: 975775749628021538}
   - component: {fileID: 834456115612824533}
   - component: {fileID: 2856934370429062305}
-  - component: {fileID: 8617564282000664498}
   - component: {fileID: 317200094761305916}
+  - component: {fileID: 7326379916358737495}
   m_Layer: 0
   m_Name: Asteroid (4)
   m_TagString: Untagged
@@ -716,21 +716,6 @@ PolygonCollider2D:
       - {x: 0.044999998, y: -0.06}
       - {x: 0.095, y: -0.01}
   m_UseDelaunayMesh: 0
---- !u!114 &8617564282000664498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853652840297520715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42ad763b61eb1947855857a30086eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 20
-  _autoMaxHealth: 1
-  _maxHealth: 60
 --- !u!50 &317200094761305916
 Rigidbody2D:
   serializedVersion: 4
@@ -758,6 +743,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7326379916358737495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853652840297520715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 50
+  _autoMaxHealth: 1
+  _maxHealth: 10
 --- !u!1 &2197530723359881046
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,8 +769,8 @@ GameObject:
   - component: {fileID: 3261258475196641492}
   - component: {fileID: 134920866734929786}
   - component: {fileID: 140176595571577956}
-  - component: {fileID: 240009618988447309}
   - component: {fileID: 1171075932683047160}
+  - component: {fileID: 7060794561365473867}
   m_Layer: 0
   m_Name: Asteroid (1)
   m_TagString: Untagged
@@ -904,21 +904,6 @@ PolygonCollider2D:
       - {x: 0.089999996, y: -0.08}
       - {x: 0.16, y: -0.01}
   m_UseDelaunayMesh: 0
---- !u!114 &240009618988447309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2197530723359881046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42ad763b61eb1947855857a30086eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 50
-  _autoMaxHealth: 1
-  _maxHealth: 60
 --- !u!50 &1171075932683047160
 Rigidbody2D:
   serializedVersion: 4
@@ -946,6 +931,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7060794561365473867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197530723359881046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 20
+  _autoMaxHealth: 1
+  _maxHealth: 10
 --- !u!1 &2756831817940552764
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,8 +994,8 @@ GameObject:
   - component: {fileID: 4004420267490296508}
   - component: {fileID: 540709313920610276}
   - component: {fileID: 3833399534235450152}
-  - component: {fileID: 8116317300747794154}
   - component: {fileID: 3339808072356836956}
+  - component: {fileID: 6563621869743760091}
   m_Layer: 0
   m_Name: Asteroid (3)
   m_TagString: Untagged
@@ -1128,21 +1128,6 @@ PolygonCollider2D:
       - {x: 0.095, y: -0.03}
       - {x: 0.065, y: 0.01}
   m_UseDelaunayMesh: 0
---- !u!114 &8116317300747794154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8179731951232600444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42ad763b61eb1947855857a30086eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 30
-  _autoMaxHealth: 1
-  _maxHealth: 60
 --- !u!50 &3339808072356836956
 Rigidbody2D:
   serializedVersion: 4
@@ -1170,3 +1155,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6563621869743760091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179731951232600444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 40
+  _autoMaxHealth: 1
+  _maxHealth: 10

@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4878870781962835948}
   - component: {fileID: 6710854626925350383}
   - component: {fileID: 7461438083253772646}
-  - component: {fileID: 1163878545907206161}
+  - component: {fileID: 1237280986487090754}
   - component: {fileID: 3648212799656276165}
   - component: {fileID: 605502925777905432}
   - component: {fileID: 476426907141522167}
@@ -207,7 +207,7 @@ PolygonCollider2D:
       - {x: 1.4098425, y: 0.021659896}
       - {x: 0.8132595, y: 1.0247698}
   m_UseDelaunayMesh: 0
---- !u!114 &1163878545907206161
+--- !u!114 &1237280986487090754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8073432972447553714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42ad763b61eb1947855857a30086eec, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c361a95bbc57d54c809f7ec93a10738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
@@ -234,9 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2aa1f800526e944a1b7154dcd69221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputDirection: 0
-  inputMainEngineAddPower: 0
-  inputMainEngineIsOn: 0
+  _inputDirection: 0
+  _inputMainEngineAddPower: 0
+  _inputMainEngineIsOn: 0
 --- !u!114 &605502925777905432
 MonoBehaviour:
   m_ObjectHideFlags: 0

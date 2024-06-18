@@ -49,6 +49,21 @@ public class ShipCtrlPanel : MonoBehaviour
 
     void Update()
     {
+        // エラーチェック？
+        try
+        {
+            if (_spaceship != null) ;
+            if (_ssHealthSystem != null) ;
+            if (_ssHyperspaceCtrl != null) ;
+            if (_ssInputCtrl != null) ;
+            if (_mainEngine != null) ;
+            if (_subEngine != null) ;
+        }
+        catch (Exception exc)
+        {
+            Console.WriteLine(exc.ToString());
+        }
+
         Health();
         Timer();
         Input();
