@@ -42,6 +42,7 @@ public class ShipCtrlPanel : MonoBehaviour
 
     void Start()
     {
+        // ÉAÉTÉCÉì
         _spaceship = GameObject.Find("Spaceship");
         _ssHealthSystem = _spaceship.GetComponent<HealthSystem>();
         _ssHyperspaceCtrl = _spaceship.GetComponent<HyperspaceCtrl>();
