@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;  // TextMeshProを使用
 
-public class SliderValueDisplay : MonoBehaviour
+public class SliderToText : MonoBehaviour
 {
     [SerializeField] public Slider _slider;  // スライダー
     [SerializeField] public TextMeshProUGUI _textTMP;  // TextMeshPro
@@ -15,14 +15,14 @@ public class SliderValueDisplay : MonoBehaviour
     void Start()
     {
         // スライダーの初期値をテキストに表示
-        UpdateValueText();
+        UpdateSliderToText();
 
         // スライダーの値が変更された時に呼ばれるメソッドを登録
-        _slider.onValueChanged.AddListener(delegate { UpdateValueText(); });
+        _slider.onValueChanged.AddListener(delegate { UpdateSliderToText(); });
     }
 
     // テキストを更新するメソッド
-    private void UpdateValueText()
+    private void UpdateSliderToText()
     {
         float scaledValue = _slider.value * _scale;
         string tmpText = scaledValue.ToString(_format) + _unit;
@@ -37,7 +37,7 @@ public class SliderValueDisplay : MonoBehaviour
         }
         else
         {
-            Debug.LogError("TextMeshProまたはTextLegacyがアタッチされていません。");
+            Debug.LogError("TextMeshProまたはTextLegacyがアタッチされていません。", this.gameObject);
         }
     }
 }

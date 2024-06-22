@@ -6,6 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Reflection;
 using static UnityEngine.UI.Image;
+using static Unity.Burst.Intrinsics.X86.Avx;
+using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public class ShipCtrlPanel : MonoBehaviour
 {
@@ -14,11 +18,13 @@ public class ShipCtrlPanel : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text _healthShieldText;
 
     [SerializeField] private TMPro.TMP_Text _timerText;
-    [SerializeField] private Slider _timerSlider;
+    [SerializeField] private UnityEngine.UI.Slider _timerSlider;
 
-    [SerializeField] private Slider _powerEngineSlider;
-    [SerializeField] private Slider _powerShieldSlider;
-    [SerializeField] private Slider _powerLaserSlider;
+    [SerializeField] private UnityEngine.UI.Slider _powerEngineSlider;
+    [SerializeField] private UnityEngine.UI.Slider _powerShieldSlider;
+    [SerializeField] private UnityEngine.UI.Slider _powerLaserSlider;
+    [SerializeField] private UnityEngine.UI.Slider _powerEngineMainSlider;
+    [SerializeField] private UnityEngine.UI.Slider _powerEngineSubSlider;
 
     [SerializeField] private TMPro.TMP_Text _inputDirectText;
     [SerializeField] private TMPro.TMP_Text _inputForBackText;
@@ -45,37 +51,30 @@ public class ShipCtrlPanel : MonoBehaviour
         _mainEngine = _obj.GetComponent<MainEngine>();
         _obj = GameObject.Find("subEngine");
         _subEngine = _obj.GetComponent<SubEngine>();
+
+        // スライダーの値が変更された時に呼ばれるメソッドを登録
+        //_slider.onValueChanged.AddListener(delegate { Method(); });
+        _powerEngineMainSlider.onValueChanged.AddListener(delegate { SliderValueChanged(_powerEngineMainSlider); });
+        _powerEngineSubSlider.onValueChanged.AddListener(delegate { SliderValueChanged(_powerEngineSubSlider); });
     }
 
     void Update()
     {
-        // エラーチェック？
-        try
-        {
-            if (_spaceship != null) ;
-            if (_ssHealthSystem != null) ;
-            if (_ssHyperspaceCtrl != null) ;
-            if (_ssInputCtrl != null) ;
-            if (_mainEngine != null) ;
-            if (_subEngine != null) ;
-        }
-        catch (Exception exc)
-        {
-            Console.WriteLine(exc.ToString());
-        }
-
-        Health();
-        Timer();
-        Input();
+        // Get and Display
+        GetHealth();
+        GetTimer();
+        GetPower();
+        GetInput();
     }
-    void Health()
+    // Get
+    void GetHealth()
     {
-        // Health
+        // GetHealth
         var tmp = _ssHealthSystem._health * 10;
         string health = tmp.ToString();
         _healthText.SetText($"Health: {health}%");
     }
-    void Timer()
+    void GetTimer()
     {
         var tmp = _ssHyperspaceCtrl._currentTimer;
         double dbl = Math.Floor(tmp * 10); //小数第1位で、切り捨て
@@ -87,11 +86,21 @@ public class ShipCtrlPanel : MonoBehaviour
         // Slider
         _timerSlider.value = (float)_ssHyperspaceCtrl._currentTimer / (float)_ssHyperspaceCtrl._maxTimer;
     }
-    void Power()
+    void GetPower()
     {
+        // Display1
 
+        // Display2
+        // Engine_MainSub
+        //Slider
+        //main
+        _powerEngineMainSlider.maxValue = (float)_mainEngine.MaxPower;
+        _powerEngineMainSlider.value = (float)_mainEngine.Power / (float)_mainEngine.MaxPower;
+        //sub
+        _powerEngineSubSlider.maxValue = (float)_subEngine.MaxPower;
+        _powerEngineSubSlider.value = (float)_subEngine.Power / (float)_subEngine.MaxPower;
     }
-    void Input()
+    void GetInput()
     {
         var list = new List<string>();
         var dict = new Dictionary<string, string>();
@@ -125,5 +134,18 @@ public class ShipCtrlPanel : MonoBehaviour
             text += "> " + key + ": " + item + "\n"; //組み合わせる。
         }
         _inputOtherText.SetText($"{text}");
+    }
+    // Set
+    void SliderValueChanged(UnityEngine.UI.Slider slider)
+    {
+        // 現在操作されているUI要素がスライダーかどうかを確認
+        // (プレイヤーが操作したのか？ Or スクリプトなどからの操作か？調べる。)
+        if (EventSystem.current.currentSelectedGameObject == slider.gameObject)
+        {
+            GameObject parent = slider.transform.parent.gameObject;
+            UIValueSetter com = parent.GetComponent<UIValueSetter>();
+
+            com.ValueChanged(slider.value);
+        }
     }
 }

@@ -38,8 +38,8 @@ public class EnginesCtrl : MonoBehaviour
     void SubEngine()
     {
         // _subEngine
-        _subEngine.power = 1.0f;
-        _tmpPower = _subEngine.power * _subEngine_Move;
+        _subEngine.Power = 1.0f;
+        _tmpPower = _subEngine.Power * _subEngine_Move;
 
         if (_coreKey._inputDirection == InputCtrl.InputDirection.Front)
         {
@@ -70,21 +70,21 @@ public class EnginesCtrl : MonoBehaviour
     {
         // _mainEngine
         //キー入力を、出力に、足す
-        _mainEngine.power += _coreKey._inputMainEngineAddPower;
+        _mainEngine.Power += _coreKey._inputMainEngineAddPower;
         _coreKey._inputMainEngineAddPower = 0; //リセット
 
         //エンジン出力に上限と下限を設ける
-        if (_mainEngine.power > _mainEngine.maxPower)
+        if (_mainEngine.Power > _mainEngine.MaxPower)
         {
-            _mainEngine.power = _mainEngine.maxPower;
+            _mainEngine.Power = _mainEngine.MaxPower;
         }
-        else if(_mainEngine.power < 0)
+        else if(_mainEngine.Power < 0)
         {
-            _mainEngine.power = 0;
+            _mainEngine.Power = 0;
         }
 
         //動け！
-        _tmpPower = _mainEngine.power * _mainEngine_Move;
+        _tmpPower = _mainEngine.Power * _mainEngine_Move;
         if (_coreKey._inputDirection == InputCtrl.InputDirection.Front && _coreKey._inputMainEngineIsOn == true)
         {
             _thisRiBdy.AddForce(transform.up * _tmpPower * Time.deltaTime, ForceMode2D.Force);

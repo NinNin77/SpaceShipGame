@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class Effect_EngineParticle : MonoBehaviour
 {
-    [SerializeField] public float _enginePower;
+    [SerializeField] public float _particlePower;
     [SerializeField] private float _particleEmission = 1f;
     [SerializeField] private float _particleSpeed = 0.7f;
 
@@ -25,9 +25,9 @@ public class Effect_EngineParticle : MonoBehaviour
     {
         // •¬ŽË—Ê
         var psEmission = _ps.emission;
-        psEmission.rateOverTime = _enginePower * _particleEmission;
+        psEmission.rateOverTime = _particlePower * _particleEmission;
         // •¬ŽË‘¬“x
         var psMain = _ps.main;
-        psMain.startSpeed = _enginePower * _particleSpeed;
+        psMain.startSpeed = _particlePower * _particleSpeed;
     }
 }
