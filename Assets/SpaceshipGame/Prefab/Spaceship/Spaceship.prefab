@@ -283,6 +283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacleTagName: Obstacle
   _damageBase: 0.05
+  _animation: {fileID: 3926271784718452575, guid: 3ff61b72b7896964980451110250112c, type: 3}
+  _animScale: 1.5
   _invincibilityDuration: 0.1
   _invAnimation: 1
   _invFlashInterval: 0.01
@@ -339,6 +341,10 @@ PrefabInstance:
     - target: {fileID: 1633147907667305848, guid: 1fd3bc13aeeb95e45ba67faaac261743, type: 3}
       propertyPath: m_Name
       value: mainEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825753953856585189, guid: 1fd3bc13aeeb95e45ba67faaac261743, type: 3}
+      propertyPath: _power
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5831215767065887439, guid: 1fd3bc13aeeb95e45ba67faaac261743, type: 3}
       propertyPath: _particle

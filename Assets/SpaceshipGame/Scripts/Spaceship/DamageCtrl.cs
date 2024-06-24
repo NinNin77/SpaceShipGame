@@ -6,6 +6,8 @@ public class DamageCtrl : MonoBehaviour
 {
     [SerializeField] string _obstacleTagName = "Obstacle";
     [SerializeField] float _damageBase = 0.001f;
+    [SerializeField] GameObject _animation = null;
+    [SerializeField] float _animScale = 1.5f;
     [Header("無敵時間")]
     [SerializeField] float _invincibilityDuration = 0.1f;
     [SerializeField] bool _invAnimation = true;
@@ -22,6 +24,7 @@ public class DamageCtrl : MonoBehaviour
     Rigidbody2D _rgd;
     SpriteRenderer _spr;
     HealthSystem _healthSystem;
+    Explosion _explosion;
     [SerializeField] float _invTimer;
 
     private void Start()
@@ -29,6 +32,7 @@ public class DamageCtrl : MonoBehaviour
         _rgd = this.GetComponent<Rigidbody2D>();
         _spr = this.GetComponent<SpriteRenderer>();
         _healthSystem = this.GetComponent<HealthSystem>();
+        _explosion = _animation.GetComponent<Explosion>();
 
         //コルーチンを開始
         if (_invAnimation == true)
@@ -77,6 +81,10 @@ public class DamageCtrl : MonoBehaviour
             _healthSystem.ModifyHealth(-damage);
 
             _invTimer = _invincibilityDuration; //無敵時間 代入
+
+            // アニメーションを再生
+            Vector3 hitPos = collision.contacts[0].point;
+            _explosion.Play(damage * _animScale, hitPos);
         }
     }
 }
