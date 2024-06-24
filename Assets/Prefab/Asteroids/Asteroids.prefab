@@ -160,8 +160,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 4
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -189,6 +189,7 @@ MonoBehaviour:
   _health: 40
   _autoMaxHealth: 1
   _maxHealth: 10
+  _destroy: 1
 --- !u!1 &605621550508916350
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,8 +344,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -372,6 +373,7 @@ MonoBehaviour:
   _health: 10
   _autoMaxHealth: 1
   _maxHealth: 10
+  _destroy: 1
 --- !u!1 &949484186005939683
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,8 +545,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 6
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -572,6 +574,7 @@ MonoBehaviour:
   _health: 60
   _autoMaxHealth: 1
   _maxHealth: 10
+  _destroy: 1
 --- !u!1 &1853652840297520715
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,8 +732,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -758,6 +761,7 @@ MonoBehaviour:
   _health: 20
   _autoMaxHealth: 1
   _maxHealth: 10
+  _destroy: 1
 --- !u!1 &2197530723359881046
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,8 +921,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 5
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -946,6 +950,7 @@ MonoBehaviour:
   _health: 50
   _autoMaxHealth: 1
   _maxHealth: 10
+  _destroy: 1
 --- !u!1 &2756831817940552764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,8 +1146,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 3
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1170,3 +1175,4 @@ MonoBehaviour:
   _health: 30
   _autoMaxHealth: 1
   _maxHealth: 10
+  _destroy: 1
