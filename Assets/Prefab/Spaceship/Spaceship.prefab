@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3648212799656276165}
   - component: {fileID: 605502925777905432}
   - component: {fileID: 476426907141522167}
+  - component: {fileID: 7516128634731232759}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Player
@@ -222,6 +223,7 @@ MonoBehaviour:
   _health: 10
   _autoMaxHealth: 1
   _maxHealth: 10
+  _destroy: 0
 --- !u!114 &3648212799656276165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +269,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxTimer: 180
   _currentTimer: 0
+--- !u!114 &7516128634731232759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8073432972447553714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1cd1289d6c6984bbd3fb5678e093af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstacleTagName: Obstacle
+  _damageBase: 0.05
+  _invincibilityDuration: 0.1
+  _invAnimation: 1
+  _invFlashInterval: 0.01
+  _invState: 0
+  _invTimer: 0
 --- !u!1001 &6543467371301834425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -338,6 +359,10 @@ PrefabInstance:
     - target: {fileID: 7364033331724443851, guid: 1fd3bc13aeeb95e45ba67faaac261743, type: 3}
       propertyPath: m_Name
       value: Engines
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556298034578727039, guid: 1fd3bc13aeeb95e45ba67faaac261743, type: 3}
+      propertyPath: _power
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7680883334196375836, guid: 1fd3bc13aeeb95e45ba67faaac261743, type: 3}
       propertyPath: _particle

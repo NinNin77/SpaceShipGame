@@ -15,6 +15,7 @@ public class HealthSystem : MonoBehaviour
     [Tooltip("trueの場合、Healthを元にMaxHealthが自動的に設定される。")]
     [SerializeField] public bool _autoMaxHealth = true;
     [SerializeField] public float _maxHealth = 10.0f;
+    [SerializeField] public bool _destroy = true;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class HealthSystem : MonoBehaviour
     public void ModifyHealth(float amount)
     {
         //Modify
+        float lastHealth = _health;
         _health += amount;
 
         //Modify後のヘルスが、maxHealthを超える場合
@@ -47,8 +49,11 @@ public class HealthSystem : MonoBehaviour
         //DEAD
         if (_health <= 0)
         {
-            Destroy(this.gameObject);//自身を破壊
+            if (_destroy == true) { Destroy(this.gameObject); }//自身を破壊
         }
+
+        //Log
+        Debug.Log($"Health Modified. {lastHealth} -> {_health}");
     }
 
     void Update()
@@ -63,9 +68,12 @@ public class HealthSystem : MonoBehaviour
         //Modify後のヘルスが、0以下になる場合
         if (_health <= 0)
         {
+            if (_destroy == true) 
+            { 
             Destroy(this.gameObject);//自身を破壊
             Debug.LogWarning("関数[ModifyHealth]を介さず、[_health <= 0]になった。" +
-                "オブジェクトは破壊した。", this.gameObject);
+            "オブジェクトは破壊した。", this.gameObject);
+            }
         }
     }
 }

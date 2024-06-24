@@ -14,21 +14,27 @@ using Unity.VisualScripting;
 public class ShipCtrlPanel : MonoBehaviour
 {
     // UI
+    //Health
     [SerializeField] private TMPro.TMP_Text _healthText;
     [SerializeField] private TMPro.TMP_Text _healthShieldText;
-
+    //Timer
     [SerializeField] private TMPro.TMP_Text _timerText;
     [SerializeField] private UnityEngine.UI.Slider _timerSlider;
-
+    //Power
     [SerializeField] private UnityEngine.UI.Slider _powerEngineSlider;
     [SerializeField] private UnityEngine.UI.Slider _powerShieldSlider;
     [SerializeField] private UnityEngine.UI.Slider _powerLaserSlider;
     [SerializeField] private UnityEngine.UI.Slider _powerEngineMainSlider;
     [SerializeField] private UnityEngine.UI.Slider _powerEngineSubSlider;
-
+    //Input
     [SerializeField] private TMPro.TMP_Text _inputDirectText;
     [SerializeField] private TMPro.TMP_Text _inputForBackText;
     [SerializeField] private TMPro.TMP_Text _inputOtherText;
+    //Speed
+    [SerializeField] private TMPro.TMP_Text _speedText;
+    [SerializeField] private float _speedScale = 1.0f;
+    [SerializeField] private string _speedFormat = "000.0 Mag"; // フォーマットを指定
+
     // 汎用
     private GameObject _obj;
     // Spaceshipの情報 (ss=SpaceShip)
@@ -66,13 +72,14 @@ public class ShipCtrlPanel : MonoBehaviour
         GetTimer();
         GetPower();
         GetInput();
+        GetSpeed();
     }
     // Get
     void GetHealth()
     {
-        // GetHealth
+        // Text
         var tmp = _ssHealthSystem._health * 10;
-        string health = tmp.ToString();
+        string health = tmp.ToString("###.00");
         _healthText.SetText($"Health: {health}%");
     }
     void GetTimer()
@@ -136,6 +143,20 @@ public class ShipCtrlPanel : MonoBehaviour
         }
         _inputOtherText.SetText($"{text}");
     }
+    void GetSpeed()
+    {
+        Rigidbody2D rgd =_spaceship. GetComponent<Rigidbody2D>();
+        // 速度ベクトル
+        var vector = rgd.velocity;
+        // 速度ベクトルの大きさ
+        var speed = rgd.velocity.magnitude * _speedScale;
+
+        // Text
+        string strVector = vector.ToString();
+        string strSpeed = speed.ToString(_speedFormat);
+        _speedText.SetText($"{strSpeed}");
+    }
+
     // Set
     void SliderValueChanged(UnityEngine.UI.Slider slider)
     {
