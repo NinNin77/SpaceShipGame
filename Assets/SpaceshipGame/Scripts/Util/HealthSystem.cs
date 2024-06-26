@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -28,7 +25,7 @@ public class HealthSystem : MonoBehaviour
     /// <summary>
     /// ヘルスを上下させたい時は、これを使う。
     /// </summary>
-    /// <param name="amount"></param>
+    /// <param name="amount">ダメージを与えたいと気は、マイナス値を入れる</param>
     public void ModifyHealth(float amount)
     {
         //Modify

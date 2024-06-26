@@ -40,6 +40,7 @@ public class ShipCtrlPanel : MonoBehaviour
     // SpaceshipÇÃèÓïÒ (ss=SpaceShip)
     private GameObject _spaceship;
     private HealthSystem _ssHealthSystem;
+    private ShieldCtrl _ssShieldCtrl;
     private HyperspaceCtrl _ssHyperspaceCtrl;
     private InputCtrl _ssInputCtrl;
     // ÇªÇÃëº
@@ -51,6 +52,7 @@ public class ShipCtrlPanel : MonoBehaviour
         // ÉAÉTÉCÉì
         _spaceship = GameObject.Find("Spaceship");
         _ssHealthSystem = _spaceship.GetComponent<HealthSystem>();
+        _ssShieldCtrl = _spaceship.GetComponent<ShieldCtrl>();
         _ssHyperspaceCtrl = _spaceship.GetComponent<HyperspaceCtrl>();
         _ssInputCtrl = _spaceship.GetComponent<InputCtrl>();
 
@@ -77,10 +79,15 @@ public class ShipCtrlPanel : MonoBehaviour
     // Get
     void GetHealth()
     {
-        // Text
+        //Health Text 
         var tmp = _ssHealthSystem._health * 10;
         string health = tmp.ToString("###.00");
         _healthText.SetText($"Health: {health}%");
+
+        // Shield Text
+        var tmp2 = _ssShieldCtrl._shield * 10;
+        string shield = tmp2.ToString("###.00");
+        _healthShieldText.SetText($"Shield: {shield}%");
     }
     void GetTimer()
     {

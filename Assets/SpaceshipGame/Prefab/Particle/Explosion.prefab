@@ -229,12 +229,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d0905425a25494469d74d2b8da871ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animScale: 1.5
+  _sizeWithoutAnim: 0.5
   _objParticle: {fileID: 3926271784718452575, guid: 11fb77ca1c6bf4a4bb161c36f4cd6143, type: 3}
+  _parScale: 1.5
+  _mainLife: 1
   _mainLifeMin: 0.1
   _mainLifeMax: 0.4
-  _mainSpeedMin: 1
-  _mainSpeedMax: 10
-  _mainSizeMin: 0.01
-  _mainSizeMax: 0.1
-  _burstMinCount: 9
-  _burstMaxCount: 15
+  _mainSpeed: 1
+  _mainSpeedMin: 0.5
+  _mainSpeedMax: 5
+  _mainSize: 1
+  _mainSizeMin: 0.005
+  _mainSizeMax: 0.05
+  _burstMinCount: 15
+  _burstMaxCount: 25
+  _audioScale: 1

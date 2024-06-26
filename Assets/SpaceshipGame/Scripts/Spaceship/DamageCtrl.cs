@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 
 public class DamageCtrl : MonoBehaviour
@@ -7,11 +8,11 @@ public class DamageCtrl : MonoBehaviour
     [SerializeField] string _obstacleTagName = "Obstacle";
     [SerializeField] float _damageBase = 0.001f;
     [SerializeField] GameObject _animation = null;
-    [SerializeField] float _animScale = 1.5f;
     [Header("無敵時間")]
     [SerializeField] float _invincibilityDuration = 0.1f;
     [SerializeField] bool _invAnimation = true;
     [SerializeField] float _invFlashInterval = 0.1f;
+    [SerializeField] Color _invAnimColor = new Color(1.0f, 0.8f, 0.75f);// オレンジ
     //プレイヤーの状態（Effect）
     private enum InvState
     {
@@ -24,6 +25,7 @@ public class DamageCtrl : MonoBehaviour
     Rigidbody2D _rgd;
     SpriteRenderer _spr;
     HealthSystem _healthSystem;
+    ShieldCtrl _shieldCtrl;
     Explosion _explosion;
     [SerializeField] float _invTimer;
 
@@ -32,6 +34,7 @@ public class DamageCtrl : MonoBehaviour
         _rgd = this.GetComponent<Rigidbody2D>();
         _spr = this.GetComponent<SpriteRenderer>();
         _healthSystem = this.GetComponent<HealthSystem>();
+        _shieldCtrl = this.GetComponent<ShieldCtrl>();
         _explosion = _animation.GetComponent<Explosion>();
 
         //コルーチンを開始
@@ -55,18 +58,51 @@ public class DamageCtrl : MonoBehaviour
         }
     }
 
-    IEnumerator InvincibilityAnimation()
+    IEnumerator InvincibilityAnimation() //これから量産したい、Effect系のテストとしても作ってる。
     {
+        bool invFlag = false;
+        Color orgColor = _spr.color; //元の色を保存
+
         while (true)
         {
+            // 無敵、
             if (_invState == InvState.Invincibility)
             {
-                _spr.enabled = !_spr.enabled;//反転させる。
-                yield return new WaitForSeconds(_invFlashInterval);
+                // Begin
+                if (invFlag ==  false)
+                {
+                    invFlag = true;
+                    _spr.color = _invAnimColor;
+                }
+                // loop
+                else if (_spr.color == Color.white) //white
+                {
+                    //_spr.enabled = !_spr.enabled;
+                    //_spr.color = Color.red;
+                    _spr.color = _invAnimColor;
+                }
+                else
+                {
+                    _spr.color = Color.white;
+                }
+                yield return new WaitForSeconds(_invFlashInterval); //これでいいのか？ループ処理速度が一定でなくなる、遅くなるだけでは？
             }
+            // 非無敵、
             else
             {
-                _spr.enabled = true; // 無敵状態が終わったらスプライトを表示
+                // 無敵状態の終わり時、End
+                if (invFlag == true)
+                {
+                    invFlag = false;
+                    _spr.enabled = true;
+                    _spr.color = orgColor;
+                }
+                // 非無敵状態の維持時、
+                else
+                {
+                    orgColor = _spr.color; //元の色を保存
+                }
+
                 yield return null; //次のフレームを待つ
             }
         }
@@ -77,14 +113,13 @@ public class DamageCtrl : MonoBehaviour
         {
             // スピードに応じて、ダメージを受ける
             float damage = _damageBase * _rgd.velocity.magnitude;
-            Debug.Log($"SpaceShip had {damage} damage", this.gameObject);
-            _healthSystem.ModifyHealth(-damage);
+            _shieldCtrl.Damage(damage); //ヘルスからではなく、シールドからDamageを呼び出し
 
             _invTimer = _invincibilityDuration; //無敵時間 代入
 
             // アニメーションを再生
             Vector3 hitPos = collision.contacts[0].point;
-            _explosion.Play(damage * _animScale, hitPos);
+            _explosion.Play(damage, hitPos);
         }
     }
 }
