@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SimplePixelUI/ExamleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/SpaceshipGame/Scenes/InGame.unity
+    guid: ffaab8d8988542542b8c76ae04416662
   m_configObjects: {}
