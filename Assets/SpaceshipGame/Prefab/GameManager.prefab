@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a85a256b7545dc4d9b51c055d73a45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hyperspaceCtrl: {fileID: 0}
+  _objGameEnd: {fileID: 0}
+  _gameState: 0
 --- !u!114 &7502743044337836248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +76,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
