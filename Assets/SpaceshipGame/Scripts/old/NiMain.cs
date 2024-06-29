@@ -6,7 +6,7 @@ public class NiMain : MonoBehaviour
 {
     [SerializeField] private ParticleSystem engine_mainRight;
 
-    // Start is called before the first frame update
+    // Core is called before the first frame update
     void Start()
     {
    

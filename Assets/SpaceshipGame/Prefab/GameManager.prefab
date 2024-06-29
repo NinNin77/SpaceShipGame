@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4511293840796652639}
   - component: {fileID: 7502743044337836248}
   - component: {fileID: 5376037143208023340}
+  - component: {fileID: 8131830061390843303}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,8 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a85a256b7545dc4d9b51c055d73a45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hyperspaceCtrl: {fileID: 0}
-  _objGameEnd: {fileID: 0}
+  _spaceship: {fileID: 0}
   _gameState: 0
 --- !u!114 &7502743044337836248
 MonoBehaviour:
@@ -160,3 +160,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8131830061390843303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415370519128785186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3edc7ec85551d2f49932190de5755451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objGameEnd: {fileID: 0}
