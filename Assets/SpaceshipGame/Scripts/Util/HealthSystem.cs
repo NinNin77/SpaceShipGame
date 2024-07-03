@@ -3,7 +3,7 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour
 {
     /// <summary>
-    /// 上下させたい時は、ModifyHealth()を使う。
+    /// 上下させたい時は、Modify()を使う。
     /// </summary>
     [Header("ヘルス")]
     [SerializeField] public float _health = 10.0f;
@@ -26,9 +26,8 @@ public class HealthSystem : MonoBehaviour
     /// ヘルスを上下させたい時は、これを使う。
     /// </summary>
     /// <param name="amount">ダメージを与えたいと気は、マイナス値を入れる</param>
-    public void ModifyHealth(float amount)
+    public void Modify(float amount)
     {
-        //Modify
         float lastHealth = _health;
         _health += amount;
 
@@ -50,7 +49,7 @@ public class HealthSystem : MonoBehaviour
         }
 
         //Log
-        Debug.Log($"Health Modified. {lastHealth} -> {_health}");
+        //Debug.Log($"Health Modified. {lastHealth} -> {_health}");
     }
 
     void Update()

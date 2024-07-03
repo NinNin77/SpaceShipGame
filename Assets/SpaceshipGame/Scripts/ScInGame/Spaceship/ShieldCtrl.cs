@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShieldCtrl : MonoBehaviour
@@ -10,48 +11,39 @@ public class ShieldCtrl : MonoBehaviour
     [SerializeField] public float _shield = 10.0f;
     [SerializeField] public float _maxShield = 10.0f;
     [SerializeField] public HealthSystem _healthSystem;
-    /// <summary>即死を防止する機能。どんな大きいdamageも必ず一回はShieldが吸収する。</summary>
-    [SerializeField] public bool _preventInstantDeath = true;
-    /// <summary>PreventInstantDeathが発動するShield量。</summary>
-    [SerializeField] public float _PIDShieldAmount = 9.0f;
 
     private List<float> _timer = new List<float>() {0};
 
     /// <summary>
-    /// 'ModifyHealth'の代わりに、これを使う。
+    /// シールド量を上下させる。
     /// </summary>
-    /// <param name="damage">ダメージ量。プラスの値を入れてね。</param>
-    public void Damage(float damage)
+    /// <param name="amount">ダメージを与えたいと気は、マイナス値を入れる</param>
+    /// <returns>返り値として余剰分を返す</returns>
+    public float Modify(float amount)
     {
         float lastShield = _shield;
-        float healthDamage = 0.0f; //プラス値
+        float over = 0.0f;
         //まずはシールドを削る
-        _shield -= damage;
+        _shield += amount;
 
-        //シールドが、0未満になる場合
-        if (_shield < 0)
+        //Modify後、maxを超える場合
+        if (_shield > _maxShield)
         {
-            // 即死防止機能が発動
-            if (_preventInstantDeath == true && lastShield　>= _PIDShieldAmount)
-            {
-                _shield = 0;
-            }
-            //発動しない
-            else
-            {
-                healthDamage = -_shield; //プラスに治す
-                _shield = 0;
-            }
-                
+            over = _shield - _maxShield; //余りを保存
+            _shield = _maxShield;
         }
-        //ヘルスを削る
-        if (healthDamage > 0) { }
+        //Modify後、0未満になる場合
+        else if (_shield < 0)
         {
-            _healthSystem.ModifyHealth(-healthDamage);
+            over = _shield; //余りを保存
+            _shield = 0;
         }
+
+        //返り値として余剰分を返す
+        return over;
 
         //Log
-        Debug.Log($"SpaceShip had {damage} damage", this.gameObject);
+        //Debug.Log($"Shield Modified. {lastShield} -> {_shield}");
     }
 
     void Update()

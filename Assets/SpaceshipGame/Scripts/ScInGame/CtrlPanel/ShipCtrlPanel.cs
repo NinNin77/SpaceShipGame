@@ -5,20 +5,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Reflection;
-using static UnityEngine.UI.Image;
-using static Unity.Burst.Intrinsics.X86.Avx;
-using UnityEngine.UIElements;
 using UnityEngine.EventSystems;
-using Unity.VisualScripting;
 
 public class ShipCtrlPanel : MonoBehaviour
 {
     // UI
     //Health
-    [SerializeField] private TMPro.TMP_Text _healthText;
-    [SerializeField] private TMPro.TMP_Text _healthShieldText;
+    [SerializeField] private TMP_Text _healthText;
+    [SerializeField] private TMP_Text _healthShieldText;
     //Timer
-    [SerializeField] private TMPro.TMP_Text _timerText;
+    [SerializeField] private TMP_Text _timerText;
     [SerializeField] private UnityEngine.UI.Slider _timerSlider;
     //Power
     [SerializeField] private UnityEngine.UI.Slider _powerEngineSlider;
@@ -27,11 +23,11 @@ public class ShipCtrlPanel : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Slider _powerEngineMainSlider;
     [SerializeField] private UnityEngine.UI.Slider _powerEngineSubSlider;
     //Input
-    [SerializeField] private TMPro.TMP_Text _inputDirectText;
-    [SerializeField] private TMPro.TMP_Text _inputForBackText;
-    [SerializeField] private TMPro.TMP_Text _inputOtherText;
+    [SerializeField] private TMP_Text _inputDirectText;
+    [SerializeField] private TMP_Text _inputForBackText;
+    [SerializeField] private TMP_Text _inputOtherText;
     //Speed
-    [SerializeField] private TMPro.TMP_Text _speedText;
+    [SerializeField] private TMP_Text _speedText;
     [SerializeField] private float _speedScale = 1.0f;
     [SerializeField] private string _speedFormat = "000.0 Mag"; // フォーマットを指定
 

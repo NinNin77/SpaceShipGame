@@ -37,13 +37,13 @@ public class IngameManager : MonoBehaviour
             if (_hyperspaceCtrl._currentTimer <= 0)
             {
                 _gameState = GameState.GameClear;
-                StartCoroutine(_gameEnd.Core(GameState.GameClear));
+                _gameEnd.MyStart(GameState.GameClear);
             }
             // ƒwƒ‹ƒX‚ª0
             if (_healthSystem._health <= 0)
             {
                 _gameState = GameState.GameOver;
-                StartCoroutine(_gameEnd.Core(GameState.GameOver));
+                _gameEnd.MyStart(GameState.GameOver);
             }
         }
     }

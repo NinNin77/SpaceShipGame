@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
-using static IngameManager;
 
 public class GameEnd : MonoBehaviour
 {
@@ -17,21 +17,36 @@ public class GameEnd : MonoBehaviour
 
     /// <summary>GameEndを開始をする</summary>
     /// <param name="ClearOrOver">GameClear もしくは GameOver</param>
-    public IEnumerator Core(IngameManager.GameState ClearOrOver)
+    public void MyStart(IngameManager.GameState ClearOrOver)
     {
-        _ingameManager._gameState = ClearOrOver; //GameStateを設定
-        GameObject title = null;
+        GameObject argTitle = null;
+
+        // GameStateを設定
+        _ingameManager._gameState = ClearOrOver;
 
         // GameOver or GameClear
         if (_ingameManager._gameState == IngameManager.GameState.GameClear)
         {
-            title = _objGameEnd.transform.Find("GameClear").gameObject;
+            argTitle = _objGameEnd.transform.Find("GameClear").gameObject;
         }
         if (_ingameManager._gameState == IngameManager.GameState.GameOver)
         {
-            title = _objGameEnd.transform.Find("GameOver").gameObject;
+            argTitle = _objGameEnd.transform.Find("GameOver").gameObject;
         }
 
+        // Updateを開始する
+        if (argTitle != null)
+        {
+            StartCoroutine(MyUpdate(argTitle));
+        }
+        else
+        {
+            Debug.Log($"引数が用意できなかったため、GameEnd.Update()は実行出来ませんでした。", gameObject);
+        }
+    }
+
+    IEnumerator MyUpdate(GameObject title)
+    {
         //objGameEndをOn
         _objGameEnd.SetActive(true);
 
@@ -76,16 +91,22 @@ public class GameEnd : MonoBehaviour
     IEnumerator TitleMove(GameObject title)
     {
         // titleを上方向へ移動
-        Vector3 start = title.transform.position; //開始地点
-        Vector3 target = start + new Vector3(0, 14, 0); //目標地点
+        Vector3 start = title.transform.localPosition;//開始地点;
+        Vector3 target = start + (Vector3.up * 180f);//目標地点
+
         float duration = 0.5f; //何秒で着くか
 
         float timer = 0;
-        while (title.transform.position != target) //到着するまでループ
+
+        while (title.transform.localPosition != target) //到着するまでループ
         {
+            // 目標地点更新
             timer += Time.deltaTime;
-            title.transform.position = Vector3.Lerp(start, target, timer / duration);
+            title.transform.localPosition = Vector3.Lerp(start, target, timer / duration);
             yield return null;// 待つ
         }
+
+        // 最終的にはちゃんと目的地に着かせる。
+        title.transform.localPosition = target;
     }
 }

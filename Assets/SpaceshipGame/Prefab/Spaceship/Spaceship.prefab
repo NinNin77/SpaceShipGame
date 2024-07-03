@@ -44,11 +44,11 @@ GameObject:
   - component: {fileID: 6710854626925350383}
   - component: {fileID: 7461438083253772646}
   - component: {fileID: 1237280986487090754}
+  - component: {fileID: 773375601082488962}
   - component: {fileID: 3648212799656276165}
   - component: {fileID: 605502925777905432}
   - component: {fileID: 476426907141522167}
   - component: {fileID: 7516128634731232759}
-  - component: {fileID: 773375601082488962}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Player
@@ -225,6 +225,21 @@ MonoBehaviour:
   _autoMaxHealth: 1
   _maxHealth: 10
   _destroy: 0
+--- !u!114 &773375601082488962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8073432972447553714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4c95f05919d6048ab4736196783e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shield: 10
+  _maxShield: 10
+  _healthSystem: {fileID: 1237280986487090754}
 --- !u!114 &3648212799656276165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,29 +300,16 @@ MonoBehaviour:
   _obstacleTagName: Obstacle
   _damageBase: 0.05
   _animation: {fileID: 3926271784718452575, guid: 3ff61b72b7896964980451110250112c, type: 3}
+  _isDamageText: 1
+  _damageText: {fileID: 0}
+  _isPreventInstantDeath: 1
+  _PIDShieldAmount: 9
   _invincibilityDuration: 0.1
-  _invAnimation: 1
+  _isInvAnimation: 1
   _invFlashInterval: 0.05
   _invAnimColor: {r: 1, g: 0.8, b: 0.75, a: 1}
   _invState: 0
   _invTimer: 0
---- !u!114 &773375601082488962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8073432972447553714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4c95f05919d6048ab4736196783e7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shield: 10
-  _maxShield: 10
-  _healthSystem: {fileID: 1237280986487090754}
-  _preventInstantDeath: 1
-  _PIDShieldAmount: 9
 --- !u!1001 &6543467371301834425
 PrefabInstance:
   m_ObjectHideFlags: 0
